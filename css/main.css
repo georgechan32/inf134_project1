@@ -1,0 +1,225 @@
+h1.title 
+{
+	text-align: center
+}
+html,body 
+{ height:100%; }
+form.login
+{
+	text-align: center
+}
+
+
+form.addEvent
+{
+	text-align: center;
+	margin-top: 100px;
+}
+
+div.event
+{
+	background-color: #ffbbbb;
+	width: 200px;
+	height: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 16px;
+    
+}
+
+.background_img {
+   	width: 100%;
+   	height: 100%;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -5;
+}
+
+#myDate
+{
+	text-align: center;
+	margin:auto;
+	font-size: 100px;
+	color: white;
+	margin-top: 15%;
+}
+
+#nav_bar_edit
+{
+	float:right;
+}
+
+.container
+{
+	text-align: center;
+	color: white;
+}
+
+#nearest_event
+{
+	margin: auto;
+	width: 400px; 	
+	font-size:30px;
+}
+
+#event_name
+{
+	float:left;
+	width: 100px;
+	display:inline;
+}
+
+#event_time
+{
+	float:right;
+	text-align: right;
+	width: 100px;
+	display:inline;
+}
+
+#schedule
+{	
+	position: absolute;
+	margin:auto;
+	padding:0px;
+	width: 400px;	
+	bottom:0px;
+	margin-bottom: 0px;
+	left: 50%;
+	margin-left: -200px; 
+	color:black;	
+	max-height: 50%;
+}
+
+#schedule_toggle
+{
+	margin:auto;
+	width:100px;
+	border:none;
+	border-radius: 50% / 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: #4f4f4f;
+    color:white;
+  	background-image: -webkit-linear-gradient(top, #4f4f4f, #0a0a0a);
+  	background-image: -moz-linear-gradient(top, #4f4f4f, #0a0a0a);
+  	background-image: -ms-linear-gradient(top, #4f4f4f, #0a0a0a);
+  	background-image: -o-linear-gradient(top, #4f4f4f, #0a0a0a);
+  	background-image: linear-gradient(to bottom, #4f4f4f, #0a0a0a);
+}
+
+#add_row
+{
+	padding:0px;
+}
+
+#add_event
+{
+	width:60px;
+	height:60px;
+	margin:20px;
+	float:right;
+	vertical-align: middle;
+	background: #4f4f4f;
+	border-radius: 50%;
+	font-weight: bold;
+    color:white;
+    font-size: 20px;
+  	background: #55bd00;
+  background-image: -webkit-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: -moz-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: -ms-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: -o-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: linear-gradient(to bottom, #55bd00, #1b3d00);
+}
+
+#schedule_list
+{
+	padding:0px;
+	margin:0px;
+	display:none;
+}
+
+
+
+#add_menu
+{
+	color: black;
+	position:absolute;
+	top:	52px;
+	bottom:0px;
+	width:50%;
+	left:50%;
+	right:0px;
+	margin:0px;
+	padding:20px;
+	z-index:-6;
+}
+
+#container_body
+{
+	width:100%;
+	left:0px;
+	padding-left:10%;
+	padding-right:10%;
+	bottom:0px;
+	text-align: center;
+}
+
+.form-control
+{
+	margin-top:7px;
+}
+#add_title
+{
+	text-decoration: underline;
+	display: inline;
+}
+#add_btn
+{
+	width:100px;
+	display: inline;
+	float:right;
+	color:white;
+	background: #55bd00;
+  background-image: -webkit-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: -moz-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: -ms-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: -o-linear-gradient(top, #55bd00, #1b3d00);
+  background-image: linear-gradient(to bottom, #55bd00, #1b3d00);
+}
+#no_add_btn
+{
+	width:100px;
+	display: inline;
+	float:right;
+	color:white;
+	background: #ff0000;
+  background-image: -webkit-linear-gradient(top, #ff0000, #7d0000);
+  background-image: -moz-linear-gradient(top, #ff0000, #7d0000);
+  background-image: -ms-linear-gradient(top, #ff0000, #7d0000);
+  background-image: -o-linear-gradient(top, #ff0000, #7d0000);
+  background-image: linear-gradient(to bottom, #ff0000, #7d0000);
+}
+
+#repeat_checkbox
+{
+	display:inline;
+}
+td, th
+{
+	text-align: center;
+	background-color: white;
+}
+
+#table_days
+{
+	margin-top: 8px;
+}
