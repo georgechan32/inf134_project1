@@ -59,15 +59,17 @@
         <img id = 'background_img' class = 'background_img' src = "img/splash1.jpg" alt = "no splash image"></img>
         <button type="button" id = "add_event" onclick = 'add_eventer()'>+</button>
         <div id = 'add_menu'>
-            <form id = 'add_form'>
+            <form id = 'add_form' method = "POST" action="javascript:void(0);">
                 <h1 id = "add_title">Add Event</h1>
-                <input type="button" id = 'no_add_btn' value="Cancel" class="form-control" onclick = "add_eventer()"/>
-                <input type="button" id = 'add_btn' value="Save" class="form-control" />
-                <input type="text" placeholder="Event Name" class="form-control"/>
-                <input type="text" placeholder="Start Time " class="form-control"/>
-                <input type="text" placeholder="Duration" class="form-control"/>
-                <input type="text" placeholder="Date" class="form-control"/>
-                <input type="text" placeholder="Location" class="form-control"/>
+                <input type="reset" id = 'no_add_btn' value="Cancel" class="form-control" onclick = "cancel_add_event()"/>
+                <input type="submit" id = 'add_btn' value="Save" class="form-control" onclick = "append_event()"/><br>
+                <input type="text" id = "event_tt" placeholder="Event Name" class="form-control" value = "" required/>
+                <input type="text" id = "event_priority" placeholder="Priority" class="form-control" value = ""/>
+                <input type="text" id = "start_time" placeholder="Start Time " class="form-control" value = "" required/>
+                <input type="text" id = "duration" placeholder="Duration" class="form-control" value = ""/>
+                <input type="text" id = "event_date" placeholder="Date" class="form-control" value = ""/>
+                <input type="text" id = "event_location" placeholder="Location" class="form-control" value = ""/>
+
 
                 <table id = 'table_days' class="table table-bordered">
                     <thead>
