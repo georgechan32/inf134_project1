@@ -6,6 +6,7 @@ function init()
 	var time = document.getElementById('myDate');
 	time.innerHTML = calculateTime();
 	setInterval(function(){ time.innerHTML = calculateTime(); console.log('hello');}, 3000);
+	
 }
 
 function calculateTime()
