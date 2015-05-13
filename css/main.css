@@ -91,16 +91,15 @@ div.event
 	padding:0px;
 	width: 400px;	
 	bottom:0px;
-	margin-bottom: 0px;
 	left: 50%;
 	margin-left: -200px; 
 	color:black;	
-	max-height: 50%;
+	
 }
 
 #schedule_toggle
 {
-	margin:auto;
+	
 	width:100px;
 	border:none;
 	border-radius: 50% / 100%;
@@ -117,7 +116,25 @@ div.event
 
 #add_row
 {
+        margin-top: 5px;
+	padding:10px;
+        font-weight: bold;
+        border: solid black 1px;
+        
+        
+}
+
+#add_row:hover
+{
+    background: #ffbbbb;
+}
+#schedule_list
+{
 	padding:0px;
+        margin-bottom: 100%;
+	display:none;
+	text-align: center;
+	opacity: 0.8;
 }
 
 #add_event
@@ -180,14 +197,7 @@ div.event
     background-image: -o-linear-gradient(top, #55bd00, #1b3d00);
     background-image: linear-gradient(to bottom, #55bd00, #1b3d00);
 }
-#schedule_list
-{
-	padding:0px;
-	margin:0px;
-	display:none;
-	text-align: left;
-	background-color: white;
-}
+
 
 
 
