@@ -185,6 +185,7 @@ div.event
 	padding:0px;
 	margin:0px;
 	display:none;
+	text-align: left;
 	background-color: white;
 }
 
@@ -263,4 +264,16 @@ td, th
 #table_days
 {
 	margin-top: 8px;
+}
+
+.tab_left
+{
+	float: left;
+	display:inline;
+}
+
+.tab_right
+{
+	float: right;
+	display: inline;
 }
