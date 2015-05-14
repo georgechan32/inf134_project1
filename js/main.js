@@ -33,13 +33,16 @@ function calculateTime()
 	}
 	return hour.toString() + ":"+minute + " " + ampm;
 }
- 		function toggle3() {
- 			var ele = document.getElementById("toggleText3");
- 			if(ele.style.display == "none") {
- 				ele.style.display = "inline";
- 			}
- 			else {
- 			ele.style.display = "none";
- 			}
- 		}
+function toggle3() 
+{
+        var ele = document.getElementById("toggleText3");
+        if(ele.style.display == "none") 
+        {
+                ele.style.display = "inline";
+        }
+        else 
+        {
+        ele.style.display = "none";
+        }
+}
 
