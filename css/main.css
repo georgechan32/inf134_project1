@@ -87,13 +87,15 @@ div.event
 #schedule
 {	
 	position: absolute;
-	margin:auto;
-	padding:0px;
+	
+
 	width: 400px;	
 	bottom:0px;
 	left: 50%;
-	margin-left: -200px; 
-	color:black;	
+	margin-left: -200px;  
+        font-family:Georgia, Times, serif; 
+        font-size:15px
+		
 	
 }
 
@@ -114,27 +116,42 @@ div.event
   	background-image: linear-gradient(to bottom, #4f4f4f, #0a0a0a);
 }
 
-#add_row
+#add_schedule
 {
-        margin-top: 5px;
-	padding:10px;
-        font-weight: bold;
-        border: solid black 1px;
         
+        display:block; 
+        text-decoration:none; 
+        color:#000000; 
+        background-color:#FFFFFF; 
+        line-height:30px;
+        border-bottom-style:solid; 
+        border-bottom-width:1px; 
+        border-bottom-color:#CCCCCC; 
+        padding-left:10px; 
+        cursor:pointer;
+       
         
 }
 
-#add_row:hover
+#add_schedule:hover
 {
-    background: #ffbbbb;
+    background-color: #6699ff;
+    color: #ffffff;
+}
+
+#add_schedule strong
+{
+    margin-right: 20px;
 }
 #schedule_list
 {
+        list-style: none;
 	padding:0px;
         margin-bottom: 100%;
 	display:none;
-	text-align: center;
-	opacity: 0.8;
+	text-align: left;
+        
+	
 }
 
 #add_event
