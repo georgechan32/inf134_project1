@@ -46,3 +46,15 @@ function toggle3()
         }
 }
 
+function realEvent()
+{
+    var schedule = document.getElementById("schedule_list");
+    var item = document.createElement("li");
+    var eventName = document.getElementById("event_tt").value;
+    var eventTime = document.getElementById("start_time").value;
+    item.appendChild(document.createTextNode(eventTime + " " + eventName));
+    item.setAttribute("id", "add_schedule");
+    schedule.appendChild(item);
+    return schedule;
+}
+

@@ -64,13 +64,13 @@
     <div id='add_menu' class="floater">
         <form id='add_form'>
             <h1 id="add_title">Add Event</h1>
-            <input type="button" id='no_add_btn' value="Cancel" class="form-control" onclick="add_eventer()" />
-            <input type="button" id='add_btn' value="Save" class="form-control" />
-            <input type="text" placeholder="Event Name" class="form-control" />
-            <input type="text" placeholder="Start Time " class="form-control" />
-            <input type="text" placeholder="Duration" class="form-control" />
-            <input type="text" placeholder="Date" class="form-control" />
-            <input type="text" placeholder="Location" class="form-control" />
+            <input type="button" id='no_add_btn' value="Cancel" class="form-control" onclick="add_eventer(); form_clear()" />
+            <input type="button" id='add_btn' value="Save" class="form-control" onclick="add_eventer(); realEvent()" />
+            <input id = "event_tt" type="text" placeholder="Event Name" class="form-control" />
+            <input id="start_time" type="text" placeholder="Start Time " class="form-control" />
+            <input id="duration" type="text" placeholder="Duration" class="form-control" />
+            <input id="event_date" type="text" placeholder="Date" class="form-control" />
+            <input id="event_location" type="text" placeholder="Location" class="form-control" />
             <table id='table_days' class="table table-bordered">
                 <thead>
                     <tr>

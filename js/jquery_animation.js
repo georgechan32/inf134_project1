@@ -80,7 +80,7 @@ function add_eventer()
 
 function append_event()
 {
-	if(document.getElementById("event_tt").value != "" && document.getElementById("start_time").value != "")
+	/*if(document.getElementById("event_tt").value != "" && document.getElementById("start_time").value != "")
 	{
 		//alert(document.getElementById("start_time").value);
 		ll.add(document.getElementById("event_tt").value, 
@@ -92,7 +92,10 @@ function append_event()
 			'<div class="tab_right">'+document.getElementById("start_time").value+'</div></li>');
 		document.getElementById("event_name").innerHTML = ($("#sl_li:first").text());
 		compile_events();
-	}
+	}*/
+    
+    
+    
 }
 
 function add_cookie_event(nodeName, nodeTime)
@@ -131,7 +134,7 @@ function cancel_add_event()
 function form_clear()
 {
 	document.getElementById("event_tt").value = "";
-	document.getElementById("event_priority").value = "";
+	/*document.getElementById("event_priority").value = "";*/
 	document.getElementById("start_time").value = "";
 	document.getElementById("duration").value = "";
 	document.getElementById("event_date").value = "";
