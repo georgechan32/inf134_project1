@@ -72,31 +72,28 @@ div.event
 #event_name
 {
 	float:left;
-	width: 100px;
+	width: 400px;
 	display:inline;
 }
 
-#event_time
-{
-	float:right;
-	text-align: right;
-	width: 100px;
-	display:inline;
-}
 
 #schedule
 {	
 	position: absolute;
 	
 
-	width: 400px;	
+	width: 36%;	
 	bottom:0px;
 	left: 50%;
-	margin-left: -200px;  
+	margin-left: -18%;  
         font-family:Georgia, Times, serif; 
         font-size:15px
-		
-	
+}
+
+.hit_right
+{
+  font-family: arial;
+  float:right;
 }
 
 #schedule_toggle
@@ -162,6 +159,7 @@ div.event
 	float:right;
 	vertical-align: middle;
 	background: #4f4f4f;
+  border: none;
 	border-radius: 50%;
 	font-weight: bold;
     color:white;
@@ -215,9 +213,6 @@ div.event
     background-image: linear-gradient(to bottom, #55bd00, #1b3d00);
 }
 
-
-
-
 #add_menu
 {
 	color: black;
@@ -230,6 +225,7 @@ div.event
 	margin:0px;
 	padding:20px;
 	z-index:-6;
+  height:410px;
 }
 
 .floater
@@ -312,4 +308,10 @@ td, th
 {
 	float: right;
 	display: inline;
+}
+
+.small_header
+{
+  color: white;
+  font-size: 30px;
 }

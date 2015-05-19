@@ -20,8 +20,6 @@
         <script src="js/plugins.js"></script>
         <script src = "js/jquery.cookie.js" type="text/javascript"></script>
         <script src="js/main.js"></script>
-
-        <script src="js/jquery_animation.js"></script>
     </head>
     
     <body onload = "init()">
@@ -68,6 +66,7 @@
             <input type="button" id='add_btn' value="Save" class="form-control" onclick="add_eventer(); realEvent()" />
             <input id = "event_tt" type="text" placeholder="Event Name" class="form-control" />
             <input id="start_time" type="text" placeholder="Start Time " class="form-control" />
+            <input id="priority" type="text" placeholder="Location" class="form-control" />
             <input id="duration" type="text" placeholder="Duration" class="form-control" />
             <input id="event_date" type="text" placeholder="Date" class="form-control" />
             <input id="event_location" type="text" placeholder="Location" class="form-control" />
@@ -114,16 +113,13 @@
     <div id='container_body'>
         <span id="toggleText3" style="display: Show;"><h1 id='myDate'>Javascript turned off, please enable </h1>
         <div id="nearest_event">
-            <span id='event_name'>Content</span>
-            <span id='event_time'>Time</span>
+            <span class = "small_header" id='event_name'>Content</span>
+        
         </div>
 		</span>
         <div id="schedule">
             <button id='schedule_toggle' type="button" class="btn btn-lg btn-default" onclick="hideSchedule(); javascript:toggle3();">=</button>
             <ul id="schedule_list" class="list-group">
-                <li id="add_schedule" class="list-group-item"><strong>10:30am</strong>Eat Cinnamon Toast Crunch</li>
-                <li id="add_schedule" class="list-group-item"><strong>12:00pm</strong>Hang wit my squad</li>
-                <li id="add_schedule" class="list-group-item"><strong>2:00pm</strong>Chase a rabbit</li>
                 
             </ul>
         </div>
