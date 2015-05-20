@@ -48,6 +48,7 @@ div.event
 	margin:auto;
 	font-size: 100px;
 	color: white;
+        text-shadow: 2px 2px black;
 	margin-top: 15%;
 }
 

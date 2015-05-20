@@ -8,7 +8,7 @@ function init()
 	var time = document.getElementById('myDate');
 	time.innerHTML = calculateTime();
 	setInterval(function(){ time.innerHTML = calculateTime(); console.log('hello');}, 3000);
-	
+	backgroundImage();
 }
 
 function calculateTime()
@@ -34,6 +34,30 @@ function calculateTime()
 		minute = "0"+minute;
 	}
 	return hour.toString() + ":"+minute + " " + ampm;
+}
+
+function backgroundImage()
+{
+    var current = new Date();
+    var time = current.getHours();
+    
+    if (time >= 0 && time < 8)
+    {
+        document.getElementById("background_img").src = "img/splash2.jpg";
+        
+    }
+    else if (time >= 8 && time < 12)
+    {
+        document.getElementById("background_img").src = "img/splash3.jpg";
+    }
+    else if (time >= 12 && time < 18)
+    {
+        document.getElementById("background_img").src = "img/splash4.jpg";
+    }
+    else if (time >= 18 && time < 24)
+    {
+        document.getElementById("background_img").src = "img/splash1.jpg";
+    }
 }
 
 function toggle3() 
