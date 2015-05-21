@@ -75,10 +75,11 @@ function toggle3()
 //e_name, e_time, e_date, e_duration, e_location, e_priority
 function realEvent()
 {
-    
+ 	
+ 	alert($.cookie("events"));   
     $('#schedule_list').append('<li id="add_schedule" class="list-group-item"><span><strong>' 
             + document.getElementById("start_time").value + '</strong> ' + 
-            document.getElementById("event_tt").value + '</span><span class = "hit_right">DELETE</span></li>');
+            document.getElementById("event_tt").value + '</span><span class = "hit_right" onclick = "cleanEvent('+document.getElementById("start_time").value+')">Delete</span></li>');
     ll.add(document.getElementById("event_tt").value, document.getElementById("start_time").value
     	, document.getElementById("event_date").value, document.getElementById("duration").value,
     	document.getElementById("event_location").value, document.getElementById("priority").value)
@@ -137,11 +138,6 @@ function fill_user()
 			//fill_tasks(event_str[1], event_str[2]);
 		}
 	}
-}
-
-function fill_tasks(time, name)
-{
-	
 }
 
 function hideSchedule()
