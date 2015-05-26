@@ -84,6 +84,11 @@ div.event {
     float: right;
 }
 
+.btn 
+{
+    color: black;
+}
+
 #schedule_toggle {
     position: absolute;
     bottom: 0%;

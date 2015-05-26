@@ -79,7 +79,7 @@ function realEvent()
  	//alert($.cookie("events"));   
     $('#schedule_list').append('<li id="add_schedule" class="list-group-item"><span><strong>' 
             + document.getElementById("start_time").value + '</strong> ' + 
-            document.getElementById("event_tt").value + '</span><span class = "hit_right" onclick = "cleanEvent('+document.getElementById("start_time").value+')">Delete</span></li>');
+            document.getElementById("event_tt").value + '</span><span class = "hit_right"><button type="button" class="btn btn-link" onclick = "cleanEvent('+document.getElementById("start_time").value+')">Delete</button></span></li>');
     ll.add(document.getElementById("event_tt").value, document.getElementById("start_time").value
     	, document.getElementById("event_date").value, document.getElementById("duration").value,
     	document.getElementById("event_location").value, document.getElementById("priority").value)
@@ -145,7 +145,7 @@ function hideSchedule()
 	$("#schedule_list").slideToggle("fast");
 	if(max)
 	{
-		$("#schedule_toggle").animate({ bottom: '400px'}, "fast");
+		$("#schedule_toggle").animate({ bottom: document.getElementById("schedule_list").style.height}, "fast");
 		max = false;
 	}
 	else
@@ -205,7 +205,7 @@ function append_event()
 function add_cookie_event(nodeName, nodeTime)
 {
 	$('#schedule_list').append('<li id="'+nodeName+'" class="list-group-item"><span onclick = "add_eventer()"><strong>' 
-            + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right" onclick = "cleanEvent('+nodeName+')">Delete</span></li>');
+            + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right"><button type="button" class="btn btn-link" onclick = "cleanEvent('+document.getElementById("start_time").value+')">Delete</button></span></li>');
 	var fill_content = $(".list-group-item:first").text();
 	document.getElementById("event_name").innerHTML = fill_content.substr(0, fill_content.length-6);
 }
