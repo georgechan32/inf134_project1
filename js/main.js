@@ -7,7 +7,7 @@ function init()
 	
 	var time = document.getElementById('myDate');
 	time.innerHTML = calculateTime();
-	setInterval(function(){ time.innerHTML = calculateTime(); console.log('hello');}, 3000);
+	setInterval(function(){ time.innerHTML = calculateTime();}, 3000);
 	backgroundImage();
 }
 
