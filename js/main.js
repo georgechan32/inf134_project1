@@ -76,7 +76,7 @@ function toggle3()
 function realEvent()
 {
  	
- 	alert($.cookie("events"));   
+ 	//alert($.cookie("events"));   
     $('#schedule_list').append('<li id="add_schedule" class="list-group-item"><span><strong>' 
             + document.getElementById("start_time").value + '</strong> ' + 
             document.getElementById("event_tt").value + '</span><span class = "hit_right" onclick = "cleanEvent('+document.getElementById("start_time").value+')">Delete</span></li>');
@@ -120,8 +120,8 @@ function fill_user()
 {
 	if($.cookie("events") == null)
 	{
-		//$.cookie("events", "");
-		alert("Saving to cookies");
+		$.cookie("events", "");
+		//alert("Saving to cookies");
 
 	}
 	document.getElementById("user_name_goes_here").innerHTML = $.cookie("username");
