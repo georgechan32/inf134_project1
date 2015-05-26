@@ -1,0 +1,12 @@
+======================TO-DOs==============================
+- Fix schedule toggler
+- Finish week view
+
+
+
+
+
+
+======================EXTRAS==============================
+- Clean up some HTML here and there
+- Use bootstrap components to replace some currently used styles (CLEANUP)
