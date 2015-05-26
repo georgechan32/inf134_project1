@@ -73,7 +73,8 @@ div.event {
     display: inline;
 }
 
-#schedule {
+#schedule 
+{
     font-family: Georgia, Times, serif;
     font-size: 15px
 }
@@ -126,12 +127,27 @@ div.event {
 }
 
 #schedule_list {
+    position: absolute;
     list-style: none;
     padding: 0px;
-    margin-bottom: 100%;
     display: none;
     text-align: left;
+    width: 50%;
+    left:25%;
+    right:25%;
+    bottom:0px;
+    margin:0px;
+    max-height: 400px;
+    overflow: scroll;
 }
+
+#displaySchedule
+{
+    background-color: blue;
+    width: 100%;
+    height: 500px;
+}
+
 
 #add_event {
     position: absolute;
