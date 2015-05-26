@@ -143,7 +143,17 @@ function fill_user()
 function hideSchedule()
 {
 	$("#schedule_list").slideToggle("fast");
-
+	if(max)
+	{
+		$("#schedule_toggle").animate({ bottom: '400px'}, "fast");
+		max = false;
+	}
+	else
+	{
+		$("#schedule_toggle").animate({ bottom: '0px'}, "fast");
+		max = true;
+	}
+		
 /*
 	if($("#schedule_list").css('display') == "none")
 	{	
