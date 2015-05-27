@@ -75,21 +75,29 @@ function toggle3()
 //e_name, e_time, e_date, e_duration, e_location, e_priority
 function realEvent()
 {
-	//alert($("#slider-range-max").slider( "option", "value" ));
-	clear_eventList();
-	var new_id =generateNodeId();
- 	ll.scheduleAdd(document.getElementById("event_tt").value, document.getElementById("start_time").value,
-    	document.getElementById("event_date").value, document.getElementById("duration").value,
-    	document.getElementById("event_location").value, $("#slider-range-max").slider( "option", "value" ), new_id);
- 	//alert($.cookie("events"));   
- 	var currNode = ll.head;
- 	while(currNode)
- 	{
- 		add_cookie_event(currNode.name,currNode.s_time, currNode.id);
- 		currNode = currNode.next;
- 	}
-    compile_events();
-    document.getElementById("event_name").innerHTML = ll.head.name;
+        var regex_time = /[0-9]+:[0-9]+\s[a|p].[m]./;
+        if (regex_time.test(document.getElementById("start_time").value) === true && document.getElementById("event_tt").value !== null)
+        {
+            //alert($("#slider-range-max").slider( "option", "value" ));
+            clear_eventList();
+            var new_id =generateNodeId();
+            ll.scheduleAdd(document.getElementById("event_tt").value, document.getElementById("start_time").value,
+            document.getElementById("event_date").value, document.getElementById("duration").value,
+            document.getElementById("event_location").value, $("#slider-range-max").slider( "option", "value" ), new_id);
+            //alert($.cookie("events"));   
+            var currNode = ll.head;
+            while(currNode)
+            {
+                    add_cookie_event(currNode.name,currNode.s_time, currNode.id);
+                    currNode = currNode.next;
+            }
+            compile_events();
+            document.getElementById("event_name").innerHTML = ll.head.name;
+        }
+	else
+        {
+            alert("Start time not inputted correctly");
+        }
 
 }
 
@@ -152,7 +160,7 @@ function hideSchedule()
 	}
 	else
 	{
-		$("#schedule_toggle").animate({ bottom: '0px'}, "fast");
+		$("#schedule_toggle").animate({ bottom: document.getElementById("schedule_list").style.height}, "fast");
 		max = true;
 	}
 		
