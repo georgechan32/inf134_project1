@@ -98,9 +98,9 @@ function realEvent()
         {
             alert("Start time not inputted correctly");
         }
+		
 
 }
-
 
 $(document).ready(function()
 {
@@ -150,8 +150,11 @@ function fill_user()
 	}
 }
 
+
 function hideSchedule()
 {
+	
+
 	$("#schedule_list").slideToggle("fast");
 	if(max)
 	{
@@ -177,22 +180,23 @@ function hideSchedule()
 
 function add_eventer()
 {
-	// if(max)
-	// {
-	// 	$("#container_body").animate({ width: '50%'}, "fast");
-	// 	$("#add_event").animate({ marginRight: '52%'}, "fast");
-	// 	$("#schedule").animate({ left: '26%'}, "fast");
-	// 	document.getElementById("add_menu").style.zIndex = 5;
-	// 	max = false;
-	// }
-	// else
-	// {
-	// 	$(" #container_body").animate({ width: '100%'}, "fast");
-	// 	$("#add_event").animate({ marginRight: '2%'}, "fast");
-	// 	$("#schedule").animate({ left: '50%'}, "fast");
-	// 	document.getElementById("add_menu").style.zIndex = -6;
-	// 	max = true;
-	// }
+	/*if(max)
+	 {
+	 	$("#container_body").animate({ width: '50%'}, "fast");
+	 	$("#add_event").animate({ marginRight: '52%'}, "fast");
+	 	$("#schedule").animate({ left: '26%'}, "fast");
+	 	document.getElementById("add_menu").style.zIndex = 5;
+	 	max = false;
+	 }
+	 else
+	 {
+	 	$(" #container_body").animate({ width: '100%'}, "fast");
+	 	$("#add_event").animate({ marginRight: '2%'}, "fast");
+	 	$("#schedule").animate({ left: '50%'}, "fast");
+	 	document.getElementById("add_menu").style.zIndex = -6;
+	 	max = true;
+	 }
+	 */
 }
 
 function clear_eventList()
