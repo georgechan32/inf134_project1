@@ -159,7 +159,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="no_add_btn" class="btn btn-danger" data-dismiss="modal" onclick="add_eventer(); form_clear()">Close</button>
-                    <button type="button" id="add_btn" class="btn btn-success" onclick="add_eventer(); realEvent()">Save</button>
+                    <button type="button" id="add_btn" class="btn btn-success" onclick="add_eventer();realEvent();realDuration()">Save</button>
                 </div>
             </div>
         </div>
@@ -170,10 +170,13 @@
     <!-- <div id='container_body'>
     </div> -->
     <div id="schedule">
-        <button id='schedule_toggle' type="button" class="btn btn-lg btn-default" onclick="hideSchedule(); javascript:toggle3();">=</button>
+        <button id='schedule_toggle' type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" onclick="hideSchedule(); javascript:toggle3()">=</button>
+			<div id="demo" class="collapse">
+			<ul id="schedule_list" class="list-group">
+			</ul>
+			</div>
+		</div>
 
-        <ul id="schedule_list" class="list-group">
-        </ul>
     </div>
 </body>
 
