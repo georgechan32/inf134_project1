@@ -5,6 +5,7 @@ h1.title {
 html,
 body {
     height: 100%;
+    font-family: "Arimo";
 }
 
 form.login {
@@ -48,7 +49,7 @@ div.event {
     margin: auto;
     font-size: 100px;
     color: white;
-    text-shadow: 2px 2px black;
+    text-shadow: 0px 2px #555;
     margin-top: 15%;
 }
 
@@ -61,14 +62,6 @@ div.event {
     color: white;
 }
 
-#nearest_event {
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-    font-size: 30px;
-    background: #f9edec;
-    box-shadow: 1px 2px 2px #000;
-}
 
 #event_name {
     float: left;
@@ -85,11 +78,6 @@ div.event {
 .hit_right {
     font-family: arial;
     float: right;
-}
-
-.btn 
-{
-    color: black;
 }
 
 #schedule_toggle {
@@ -172,7 +160,7 @@ div.event {
     color: white;
     font-size: 20px;
     background: #2f8d44;
-    box-shadow: 1px 2px 1px #20622F;
+    box-shadow: 0px 1px 5px #555;
    /* background-image: -webkit-linear-gradient(top, #55bd00, #1b3d00);
     background-image: -moz-linear-gradient(top, #55bd00, #1b3d00);
     background-image: -ms-linear-gradient(top, #55bd00, #1b3d00);
@@ -180,6 +168,15 @@ div.event {
     background-image: linear-gradient(to bottom, #55bd00, #1b3d00);*/
 }
 
+#nearest_event {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    font-size: 30px;
+    background: #f9edec;
+    box-shadow: 1px 2px 2px #000;
+    z-index: 5;
+}
 #button_monday {
     width: 60px;
     height: 60px;
