@@ -6,7 +6,6 @@
     <title>Taske</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/normalize.css">
     <meta name="viewport" content="width=device-width">
     <!--<link rel='stylesheet' type='text/css' href='stylesheet.css'/>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -89,19 +88,22 @@
     </nav>
     <img id='background_img' class='background_img' alt="no splash image">
     <div class="container">
-        <div class="row vertical-center-row">
-            <div class="col-lg-12">
-                <div class="row ">
-                    <div id="toggleText3" style="display: Show;">
-                        <h1 id='myDate'>Javascript turned off, please enable </h1>
-                        <div id="nearest_event">
-                            <span class="small_header" id='event_name'>Content</span>
-                        </div>
-                    </div>
-                </div>
+<div class="row vertical-center-row">
+    <div class="col-lg-12">
+        <div class="row ">
+            <div id="toggleText3" style="display: Show;">
+                <h1 id='myDate'>Javascript turned off, please enable </h1>
+            </div>
+        </div>
+        <div class="row ">
+            <div id="nearest_event">
+                <h1>No Events added</h1>
             </div>
         </div>
     </div>
+</div>
+</div>
+
     <!-- Button trigger modal -->
     <button type="button" id="add_event" data-toggle="modal" data-target="#schedule-modal"><span class="glyphicon glyphicon-plus"></span></button>
     <button type="button" class="btn btn-lg btn-default" onclick="printLinkedList()">*</button>
