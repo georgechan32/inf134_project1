@@ -66,9 +66,7 @@ div.event {
 
 
 #event_name {
-    float: left;
-    width: 400px;
-    display: inline;
+    width: 400px; 
 }
 
 #schedule 
