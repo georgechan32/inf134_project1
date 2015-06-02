@@ -37,12 +37,12 @@ function backgroundImage() {
     var time = current.getHours();
 
     if (time >= 0 && time < 8) {
-        document.getElementById("background_img").src = "img/splash2.jpg";
+        document.getElementById("background_img").src = "img/splash3.jpg";
 
     } else if (time >= 8 && time < 12) {
-        document.getElementById("background_img").src = "img/splash3.jpg";
+        document.getElementById("background_img").src = "img/splash1.jpg";
     } else if (time >= 12 && time < 18) {
-        document.getElementById("background_img").src = "img/splash4.jpg";
+        document.getElementById("background_img").src = "img/splash3.jpg";
     } else if (time >= 18 && time < 24) {
         document.getElementById("background_img").src = "img/splash1.jpg";
     }
@@ -66,12 +66,8 @@ function realEvent() {
         ll.scheduleAdd(document.getElementById("event_tt").value, document.getElementById("start_time").value,
             document.getElementById("duration").value, null,
             document.getElementById("event_location").value, $("#slider-range-max").slider("option", "value"), new_id);
-        //alert($.cookie("events"));   
-        var currNode = ll.head;
-        while (currNode) {
-            add_cookie_event(currNode.name, currNode.s_time, currNode.id);
-            currNode = currNode.next;
-        }
+        //alert($.cookie("events")); 
+        add_to_cookie()  
         compile_events();
         document.getElementById("event_name").innerHTML =  ll.head.s_time + " " + ll.head.name ;
     } else {
@@ -80,6 +76,15 @@ function realEvent() {
 
 
 }
+
+function add_to_cookie() {
+    var currNode = ll.head;
+    while (currNode) {
+        add_cookie_event(currNode.name, currNode.s_time, currNode.id);
+        currNode = currNode.next;
+    }
+}
+
 
 $(document).ready(function() {
     max = true;
@@ -122,18 +127,23 @@ function fill_user() {
 
 
 function hideSchedule() {
-
-
    $("#schedule_list").slideToggle("fast");
+   var toggle = $("#schedule_toggle");
  
     if (max) 
     {
-         $("#schedule_list").show("fast");
+         $("#schedule_list").slideUp(function(){
+            toggle.removeClass("glyphicon-chevron-down");
+            toggle.addClass("glyphicon-remove");
+            $(this).show();
+         });
         max = false;
     } 
     else 
     {
         $("#schedule_list").slideDown("fast");
+        toggle.removeClass("glyphicon-remove");
+        toggle.addClass("glyphicon-chevron-down");
         max = true;
     }
 
@@ -163,7 +173,7 @@ function append_event() {
 
 function add_cookie_event(nodeName, nodeTime, nodeId) {
 	nodeIdString = "'" + nodeId + "'";
-    $('#schedule_list').append('<li id="' + nodeName + '" class="list-group-item" onclick = "editEvent('+nodeIdString+')"><span ><strong>' + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right"><button type="button" class="btn btn-link" onclick ="cleanEvent(' + nodeIdString + ')">Delete</button></span></li>');
+    $('#schedule_list').append('<li id="' + nodeName + '" class="list-group-item" onclick = "editEvent('+nodeIdString+')"><span ><strong>' + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right"><button type="button" class="btn btn-link" style="margin-top:-5px;"onclick ="cleanEvent(' + nodeIdString + ')">Delete</button></span></li>');
     var fill_content = $(".list-group-item:first").text();
     document.getElementById("event_name").innerHTML = fill_content.substr(0, fill_content.length - 6);
 }
@@ -387,5 +397,25 @@ function generateNodeId() {
 }
 
 function printLinkedList() {
-    ll.print();
+    ll.print()
+}
+
+function clear_predefined() {
+    ll.remove_all();
+    compile_events();
+    location.reload();
+}
+function add_predefined()
+{
+    var nodes = [];
+
+    nodes.push(ll.scheduleAdd("INF134", "12:30 p.m.", "1.5", null, "UCI", 11, generateNodeId()));
+    nodes.push(ll.scheduleAdd("CS131", "2:00 p.m.", "1", null, "UCI", 11, generateNodeId()));
+    nodes.push(ll.scheduleAdd("Eat", "4:00 p.m.", "30", null, "UCI", 11, generateNodeId()));
+    nodes.push(ll.scheduleAdd("Work", "5:00 p.m.", "5", null, "Irvine", 11, generateNodeId()));
+
+    add_to_cookie();
+    compile_events();
+    location.reload();
+
 }

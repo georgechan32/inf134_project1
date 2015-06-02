@@ -4,9 +4,9 @@ h1.title {
 
 html,
 body {
-    height: 100%;
+    height: 100%%;
     font-family: "Arimo";
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 form.login {
@@ -53,7 +53,6 @@ div.event {
     text-shadow: 0px 2px #555;
     margin-top: 15%;
     font-family: "Julius Sans One"
-    
 }
 
 #nav_bar_edit {
@@ -65,32 +64,28 @@ div.event {
     color: white;
 }
 
-
 #event_name {
-    width: 400px; 
+    width: 400px;
 }
+
 .hit_right {
     font-family: arial;
     float: right;
-    height:100%;
+    height: 100%;
 }
 
-
-#schedule 
-{
+#schedule {
     position: fixed;
     width: 50%;
     bottom: 0px;
-    font-family: Georgia, Times, serif;
+    /*font-family: Georgia, Times, serif;*/
     font-size: 15px;
     left: 25%;
-    right:25%;
+    right: 25%;
     text-align: center;
 }
 
-#schedule_list 
-{
-    
+#schedule_list {
     list-style: none;
     padding: 0px;
     display: none;
@@ -103,8 +98,11 @@ div.event {
 }
 
 #schedule_toggle {
-    position: relative;
-    margin:auto;
+    font-size: 3.5em;
+    color: rgba(255, 255, 255, .5);
+    text-shadow: 0px 1px #333;
+    /* position: relative;
+    margin: auto;
     width: 100px;
     border: none;
     border-radius: 50% / 100%;
@@ -116,7 +114,7 @@ div.event {
     background-image: -moz-linear-gradient(top, #4f4f4f, #0a0a0a);
     background-image: -ms-linear-gradient(top, #4f4f4f, #0a0a0a);
     background-image: -o-linear-gradient(top, #4f4f4f, #0a0a0a);
-    background-image: linear-gradient(top, #4f4f4f, #0a0a0a);
+    background-image: linear-gradient(top, #4f4f4f, #0a0a0a);*/
 }
 
 #add_schedule {
@@ -141,33 +139,26 @@ div.event {
     margin-right: 20px;
 }
 
-
-
-.list-group-item
-{
+.list-group-item {
     font-family: "Arimo";
 }
 
-.list-group-item:hover 
-{
+.list-group-item:hover {
     background-color: #0066FF;
     color: white;
 }
 
-.btn-link
-{
+.btn-link {
     font-family: "Arimo";
     color: black;
     margin: auto;
-
 }
-.btn-link:hover
-{
+
+.btn-link:hover {
     color: white;
 }
 
-#displaySchedule
-{
+#displaySchedule {
     background-color: blue;
     width: 100%;
     height: 500px;
@@ -176,7 +167,7 @@ div.event {
 #add_event {
     position: absolute;
     top: 10%;
-    right:20px;
+    right: 20px;
     width: 60px;
     height: 60px;
     margin: 20px;
@@ -188,36 +179,22 @@ div.event {
     color: white;
     font-size: 20px;
     background: #2f8d44;
-    box-shadow: 0px 1px 5px #555;
-   /* background-image: -webkit-linear-gradient(top, #55bd00, #1b3d00);
+    box-shadow: 0px 1px 3px #888;
+    /* background-image: -webkit-linear-gradient(top, #55bd00, #1b3d00);
     background-image: -moz-linear-gradient(top, #55bd00, #1b3d00);
     background-image: -ms-linear-gradient(top, #55bd00, #1b3d00);
     background-image: -o-linear-gradient(top, #55bd00, #1b3d00);
     background-image: linear-gradient(to bottom, #55bd00, #1b3d00);*/
 }
 
-.grow
-{
+.grow {
     -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform: scale(1.0);
-  transform: scale(1.0);
-}
-
-.grow:hover
-{
-    webkit-transform: translateZ(0);
-  transform: translateZ(0);
-      -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
 }
 
 #nearest_event {
@@ -225,17 +202,35 @@ div.event {
     margin-right: auto;
     /*vertical-align: middle;
     display: table-cell;*/
-    color: #ddb;
+    
+    color: #ddd;
     width: 400px;
     font-size: 30px;
-    background: transparent;
-    box-shadow: 0px 4px 10px #555;
+    background: rgba(15, 15, 15, .32);
+    box-shadow: 0px 3px 7px #555;
     padding: 10px;
     z-index: 30;
     margin-top: 10px;
     font-family: "Julius Sans One";
 }
 
+
+#nearest_event:hover
+{
+    color: white;
+}
+
+.grow:hover {
+    webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
 
 #button_monday {
     width: 60px;
@@ -316,33 +311,6 @@ div.event {
     display: inline;
 }
 
-/*#add_btn {
-    width: 100px;
-    display: inline;
-    float: right;
-    color: white;
-    background: #2f8d44;
-    box-shadow: 0px 2px 1px #20622F;
-    background-image: -webkit-linear-gradient(top, #55bd00, #1b3d00);
-    background-image: -moz-linear-gradient(top, #55bd00, #1b3d00);
-    background-image: -ms-linear-gradient(top, #55bd00, #1b3d00);
-    background-image: -o-linear-gradient(top, #55bd00, #1b3d00);
-    background-image: linear-gradient(to bottom, #55bd00, #1b3d00);
-}
-
-#no_add_btn {
-    width: 100px;
-    display: inline;
-    float: right;
-    color: white;
-    background: #ff0000;
-    background-image: -webkit-linear-gradient(top, #ff0000, #7d0000);
-    background-image: -moz-linear-gradient(top, #ff0000, #7d0000);
-    background-image: -ms-linear-gradient(top, #ff0000, #7d0000);
-    background-image: -o-linear-gradient(top, #ff0000, #7d0000);
-    background-image: linear-gradient(to bottom, #ff0000, #7d0000);
-}*/
-
 #repeat_checkbox {
     display: inline;
 }
@@ -398,3 +366,37 @@ th {
     border-color: #CCCCCC
 }
 
+    
+    .container {
+        display: table;
+        vertical-align: middle;
+    }
+    
+    .vertical-center-row {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .navbar {
+        background-image: none;
+        background-color: rgba(60, 60, 60, .90);
+        font-family: 'Julius Sans One';
+        box-shadow: 0px 2px 2px #333;
+        border: 1px solid #111
+        color: white;
+    }
+
+
+    .btn
+    {
+        background-image: none; 
+        border-radius: 0px;
+        box-shadow: 0px 1px 4px #333;
+        border: none;
+
+    }
+
+    .center
+    {
+        margin: 5px 76px;
+    }
