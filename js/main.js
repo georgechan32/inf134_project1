@@ -51,7 +51,7 @@ function backgroundImage() {
 function toggle3() {
         var ele = document.getElementById("toggleText3");
         if (ele.style.display == "none") {
-            ele.style.display = "inline";
+           ele.style.display = "inline";
         } else {
             ele.style.display = "none";
         }
@@ -131,18 +131,21 @@ function hideSchedule() {
    var toggle = $("#schedule_toggle");
  
     if (max) 
-    {
-         $("#schedule_list").show(function(){
+    {       
+            $("#schedule_list").effect("slide", { direction: "down" }, 800);
+        //  $("#schedule_list").show(function(){
             toggle.removeClass("glyphicon-chevron-down");
             toggle.addClass("glyphicon-remove");
-         });
+        //  });
         max = false;
     } 
     else 
     {
+        $("#info").slideDown("slow");
         $("#schedule_list").slideDown("fast");
         toggle.removeClass("glyphicon-remove");
         toggle.addClass("glyphicon-chevron-down");
+
         max = true;
     }
 
