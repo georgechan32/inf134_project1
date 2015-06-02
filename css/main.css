@@ -6,6 +6,7 @@ html,
 body {
     height: 100%;
     font-family: "Arimo";
+    font-weight: bold;
 }
 
 form.login {
@@ -68,24 +69,42 @@ div.event {
 #event_name {
     width: 400px; 
 }
-
-#schedule 
-{
-    font-family: Georgia, Times, serif;
-    font-size: 15px
-}
-
 .hit_right {
     font-family: arial;
     float: right;
+    height:100%;
+}
+
+
+#schedule 
+{
+    position: fixed;
+    width: 50%;
+    bottom: 0px;
+    font-family: Georgia, Times, serif;
+    font-size: 15px;
+    left: 25%;
+    right:25%;
+    text-align: center;
+}
+
+#schedule_list 
+{
+    
+    list-style: none;
+    padding: 0px;
+    display: none;
+    text-align: left;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: scroll;
+    background-color: white;
+    color: black;
 }
 
 #schedule_toggle {
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    right: 25%;
-    margin-left: -50px;
+    position: relative;
+    margin:auto;
     width: 100px;
     border: none;
     border-radius: 50% / 100%;
@@ -122,19 +141,29 @@ div.event {
     margin-right: 20px;
 }
 
-#schedule_list {
-    position: absolute;
-    list-style: none;
-    padding: 0px;
-    display: none;
-    text-align: left;
-    width: 50%;
-    left:25%;
-    right:25%;
-    bottom:0px;
-    margin:0px;
-    max-height: 400px;
-    overflow: scroll;
+
+
+.list-group-item
+{
+    font-family: "Arimo";
+}
+
+.list-group-item:hover 
+{
+    background-color: #0066FF;
+    color: white;
+}
+
+.btn-link
+{
+    font-family: "Arimo";
+    color: black;
+    margin: auto;
+
+}
+.btn-link:hover
+{
+    color: white;
 }
 
 #displaySchedule
@@ -383,3 +412,4 @@ th {
     border-radius: 10px;
     border-color: #CCCCCC
 }
+

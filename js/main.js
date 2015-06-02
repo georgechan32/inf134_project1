@@ -87,7 +87,7 @@ $(document).ready(function() {
     ll = makeLinkedList();
 
     function hideSchedule() {
-        $("#schedule_list").hide("fast");
+        //$("#schedule_list").hide("fast");
 
     }
     if ($.cookie("username") == null) {
@@ -123,21 +123,21 @@ function fill_user() {
 
 function hideSchedule() {
 
-
-    $("#schedule_list").slideToggle("fast");
-    if (max) {
-        $("#schedule_toggle").animate({
-            bottom: document.getElementById("schedule_list").style.height
-        }, "fast");
+    
+//    $("#schedule_list").slideToggle("fast");
+ 
+    if (max) 
+    {
+         $("#schedule_list").show("fast");
         max = false;
-    } else {
-        $("#schedule_toggle").animate({
-            bottom: document.getElementById("schedule_list").style.height
-        }, "fast");
+    } 
+    else 
+    {
+        $("#schedule_list").slideDown("fast");
         max = true;
     }
-
     /*
+    
     	if($("#schedule_list").css('display') == "none")
     	{	
     		$("#schedule_list").show("fast");
@@ -145,7 +145,8 @@ function hideSchedule() {
     	else
     	{
     		$("#schedule_list").hide("fast");
-    	}*/
+    	}
+        */
 }
 
 function add_eventer() {
@@ -191,7 +192,7 @@ function append_event() {
 
 function add_cookie_event(nodeName, nodeTime, nodeId) {
 	nodeIdString = "'" + nodeId + "'";
-    $('#schedule_list').append('<li id="' + nodeName + '" class="list-group-item"><span onclick = "add_eventer()"><strong>' + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right"><button type="button" class="btn btn-link" onclick ="cleanEvent(' + nodeIdString + ')">Delete</button></span></li>');
+    $('#schedule_list').append('<li id="' + nodeName + '" class="list-group-item" onclick = "editEvent('+nodeIdString+')"><span ><strong>' + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right"><button type="button" class="btn btn-link" onclick ="cleanEvent(' + nodeIdString + ')">Delete</button></span></li>');
     var fill_content = $(".list-group-item:first").text();
     document.getElementById("event_name").innerHTML = fill_content.substr(0, fill_content.length - 6);
 }
@@ -235,6 +236,27 @@ function form_clear() {
     document.getElementById("duration").value = "";
     // document.getElementById("event_date").value = "";
     document.getElementById("event_location").value = "";
+}
+
+function editEvent(id)
+{
+    form_clear();
+    var ll_pointer = ll.head;
+    //iterate through the linked list to find the correct event
+    while(ll_pointer)
+    {
+        if(ll_pointer.id == id)
+        {
+            break;
+        }
+        ll_pointer = ll_pointer.next;
+    }
+    document.getElementById("event_tt").value = ll_pointer.name;
+    document.getElementById("start_time").value = ll_pointer.s_time;
+    document.getElementById("duration").value = ll_pointer.duration;
+    document.getElementById("event_location").value = ll_pointer.location;
+    $('#schedule-modal').modal('show');
+    //console.log("edit_event called");
 }
 
 var makeLinkedList = function() {
