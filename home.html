@@ -45,8 +45,9 @@
     
     .navbar {
         background-image: none;
-        background-color: #333;
+        background-color: rgba(50, 50, 50, .9);
         font-family: 'Julius Sans One';
+        box-shadow: 0px 2px 2px #333;
 
     }
     </style>
@@ -96,7 +97,7 @@
             </div>
         </div>
         <div class="row ">
-            <div id="nearest_event">
+            <div id="nearest_event" class="grow">
                 <h1 id="event_name">No Events added</h1>
             </div>
         </div>
@@ -105,7 +106,7 @@
 </div>
 
     <!-- Button trigger modal -->
-    <button type="button" id="add_event" data-toggle="modal" data-target="#schedule-modal"><span class="glyphicon glyphicon-plus"></span></button>
+    <button type="button" id="add_event" data-toggle="modal" data-target="#schedule-modal" class="grow"><span class="glyphicon glyphicon-plus"></span></button>
     <button type="button" class="btn btn-lg btn-default" onclick="printLinkedList()">*</button>
     <!-- Modal -->
     <div class="modal fade" id="schedule-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

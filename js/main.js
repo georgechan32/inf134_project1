@@ -73,7 +73,7 @@ function realEvent() {
             currNode = currNode.next;
         }
         compile_events();
-        document.getElementById("event_name").innerHTML = ll.head.name;
+        document.getElementById("event_name").innerHTML =  ll.head.s_time + " " + ll.head.name ;
     } else {
         alert("Start time not inputted correctly");
     }
@@ -124,7 +124,7 @@ function fill_user() {
 function hideSchedule() {
 
 
-    $("#schedule_list").slideToggle("fast");
+    $("#schedule_list").show("slide", "slow");
     if (max) {
         $("#schedule_toggle").animate({
             bottom: document.getElementById("schedule_list").style.height
@@ -225,7 +225,7 @@ function compile_events() {
 function cancel_add_event() {
     add_eventer();
     form_clear();
-    $("#schedule_list").slideUp("fast");
+    $("#schedule_list").effect("slide");
 }
 
 function form_clear() {
