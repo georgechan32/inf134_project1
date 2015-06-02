@@ -87,7 +87,7 @@ $(document).ready(function() {
     ll = makeLinkedList();
 
     function hideSchedule() {
-        $("#schedule_list").hide("fast");
+        //$("#schedule_list").hide("fast");
 
     }
     if ($.cookie("username") == null) {
@@ -124,49 +124,21 @@ function fill_user() {
 function hideSchedule() {
 
 
-    $("#schedule_list").show("slide", "slow");
-    if (max) {
-        $("#schedule_toggle").animate({
-            bottom: document.getElementById("schedule_list").style.height
-        }, "fast");
+   $("#schedule_list").slideToggle("fast");
+ 
+    if (max) 
+    {
+         $("#schedule_list").show("fast");
         max = false;
-    } else {
-        $("#schedule_toggle").animate({
-            bottom: document.getElementById("schedule_list").style.height
-        }, "fast");
+    } 
+    else 
+    {
+        $("#schedule_list").slideDown("fast");
         max = true;
     }
 
-    /*
-    	if($("#schedule_list").css('display') == "none")
-    	{	
-    		$("#schedule_list").show("fast");
-    	}
-    	else
-    	{
-    		$("#schedule_list").hide("fast");
-    	}*/
 }
 
-function add_eventer() {
-    /*if(max)
-	 {
-	 	$("#container_body").animate({ width: '50%'}, "fast");
-	 	$("#add_event").animate({ marginRight: '52%'}, "fast");
-	 	$("#schedule").animate({ left: '26%'}, "fast");
-	 	document.getElementById("add_menu").style.zIndex = 5;
-	 	max = false;
-	 }
-	 else
-	 {
-	 	$(" #container_body").animate({ width: '100%'}, "fast");
-	 	$("#add_event").animate({ marginRight: '2%'}, "fast");
-	 	$("#schedule").animate({ left: '50%'}, "fast");
-	 	document.getElementById("add_menu").style.zIndex = -6;
-	 	max = true;
-	 }
-	 */
-}
 
 function clear_eventList() {
     var listParent = document.getElementById("schedule_list");
@@ -191,7 +163,7 @@ function append_event() {
 
 function add_cookie_event(nodeName, nodeTime, nodeId) {
 	nodeIdString = "'" + nodeId + "'";
-    $('#schedule_list').append('<li id="' + nodeName + '" class="list-group-item"><span onclick = "add_eventer()"><strong>' + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right"><button type="button" class="btn btn-link" onclick ="cleanEvent(' + nodeIdString + ')">Delete</button></span></li>');
+    $('#schedule_list').append('<li id="' + nodeName + '" class="list-group-item" onclick = "editEvent('+nodeIdString+')"><span ><strong>' + nodeTime + '</strong> ' + nodeName + '</span><span class = "hit_right"><button type="button" class="btn btn-link" onclick ="cleanEvent(' + nodeIdString + ')">Delete</button></span></li>');
     var fill_content = $(".list-group-item:first").text();
     document.getElementById("event_name").innerHTML = fill_content.substr(0, fill_content.length - 6);
 }
@@ -235,6 +207,48 @@ function form_clear() {
     document.getElementById("duration").value = "";
     // document.getElementById("event_date").value = "";
     document.getElementById("event_location").value = "";
+}
+
+function e_form_clear() {
+    document.getElementById("e_event_tt").value = "";
+    /*document.getElementById("event_priority").value = "";*/
+    document.getElementById("e_start_time").value = "";
+    document.getElementById("e_duration").value = "";
+    // document.getElementById("event_date").value = "";
+    document.getElementById("e_event_location").value = "";
+}
+
+var edit_ptr;
+function eventEditer()
+{
+    edit_ptr.name = document.getElementById("e_event_tt").value;
+    edit_ptr.s_time = document.getElementById("e_start_time").value;
+    edit_ptr.duration = document.getElementById("e_duration").value;
+    edit_ptr.location = document.getElementById("e_event_location").value;
+    compile_events();
+    location.reload();
+}
+
+function editEvent(id)
+{
+    e_form_clear();
+    edit_ptr = ll.head;
+    //iterate through the linked list to find the correct event
+    while(edit_ptr)
+    {
+        if(edit_ptr.id == id)
+        {
+            break;
+        }
+        edit_ptr = edit_ptr.next;
+    }
+    //$("#slider-range-max").slider( "option", "value") = ll_pointer.priority;
+    document.getElementById("e_event_tt").value = edit_ptr.name;
+    document.getElementById("e_start_time").value = edit_ptr.s_time;
+    document.getElementById("e_duration").value = edit_ptr.duration;
+    document.getElementById("e_event_location").value = edit_ptr.location;
+    $('#edit-modal').modal('show');
+    //console.log("edit_event called");
 }
 
 var makeLinkedList = function() {
