@@ -136,38 +136,9 @@ function hideSchedule() {
         $("#schedule_list").slideDown("fast");
         max = true;
     }
-    /*
-    
-    	if($("#schedule_list").css('display') == "none")
-    	{	
-    		$("#schedule_list").show("fast");
-    	}
-    	else
-    	{
-    		$("#schedule_list").hide("fast");
-    	}
-        */
+
 }
 
-function add_eventer() {
-    /*if(max)
-	 {
-	 	$("#container_body").animate({ width: '50%'}, "fast");
-	 	$("#add_event").animate({ marginRight: '52%'}, "fast");
-	 	$("#schedule").animate({ left: '26%'}, "fast");
-	 	document.getElementById("add_menu").style.zIndex = 5;
-	 	max = false;
-	 }
-	 else
-	 {
-	 	$(" #container_body").animate({ width: '100%'}, "fast");
-	 	$("#add_event").animate({ marginRight: '2%'}, "fast");
-	 	$("#schedule").animate({ left: '50%'}, "fast");
-	 	document.getElementById("add_menu").style.zIndex = -6;
-	 	max = true;
-	 }
-	 */
-}
 
 function clear_eventList() {
     var listParent = document.getElementById("schedule_list");
@@ -238,24 +209,45 @@ function form_clear() {
     document.getElementById("event_location").value = "";
 }
 
+function e_form_clear() {
+    document.getElementById("e_event_tt").value = "";
+    /*document.getElementById("event_priority").value = "";*/
+    document.getElementById("e_start_time").value = "";
+    document.getElementById("e_duration").value = "";
+    // document.getElementById("event_date").value = "";
+    document.getElementById("e_event_location").value = "";
+}
+
+var edit_ptr;
+function eventEditer()
+{
+    edit_ptr.name = document.getElementById("e_event_tt").value;
+    edit_ptr.s_time = document.getElementById("e_start_time").value;
+    edit_ptr.duration = document.getElementById("e_duration").value;
+    edit_ptr.location = document.getElementById("e_event_location").value;
+    compile_events();
+    location.reload();
+}
+
 function editEvent(id)
 {
-    form_clear();
-    var ll_pointer = ll.head;
+    e_form_clear();
+    edit_ptr = ll.head;
     //iterate through the linked list to find the correct event
-    while(ll_pointer)
+    while(edit_ptr)
     {
-        if(ll_pointer.id == id)
+        if(edit_ptr.id == id)
         {
             break;
         }
-        ll_pointer = ll_pointer.next;
+        edit_ptr = edit_ptr.next;
     }
-    document.getElementById("event_tt").value = ll_pointer.name;
-    document.getElementById("start_time").value = ll_pointer.s_time;
-    document.getElementById("duration").value = ll_pointer.duration;
-    document.getElementById("event_location").value = ll_pointer.location;
-    $('#schedule-modal').modal('show');
+    //$("#slider-range-max").slider( "option", "value") = ll_pointer.priority;
+    document.getElementById("e_event_tt").value = edit_ptr.name;
+    document.getElementById("e_start_time").value = edit_ptr.s_time;
+    document.getElementById("e_duration").value = edit_ptr.duration;
+    document.getElementById("e_event_location").value = edit_ptr.location;
+    $('#edit-modal').modal('show');
     //console.log("edit_event called");
 }
 
