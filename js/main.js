@@ -132,10 +132,9 @@ function hideSchedule() {
  
     if (max) 
     {
-         $("#schedule_list").slideUp(function(){
+         $("#schedule_list").show(function(){
             toggle.removeClass("glyphicon-chevron-down");
             toggle.addClass("glyphicon-remove");
-            $(this).show();
          });
         max = false;
     } 
