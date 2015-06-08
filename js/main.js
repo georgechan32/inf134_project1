@@ -59,8 +59,17 @@ function toggle3() {
     //e_name, e_time, e_date, e_duration, e_location, e_priority
 function realEvent() {
     var regex_time = /[0-9]+:[0-9]+\s[a|p].[m]./;
-    if (regex_time.test(document.getElementById("start_time").value) === true && document.getElementById("event_tt").value !== null) {
-        //alert($("#slider-range-max").slider( "option", "value" ));
+    if (regex_time.test(document.getElementById("start_time").value) === true && document.getElementById("event_tt").value !== null) 
+    {
+        for(var i = ll.head; i != null; i = i.next)
+        {
+            if(document.getElementById("start_time").value == i.s_time)
+            {
+                alert("Error: event overlaps with pre-exisiting event.");
+                return;
+            }
+        }
+
         clear_eventList();
         var new_id = generateNodeId();
         ll.scheduleAdd(document.getElementById("event_tt").value, document.getElementById("start_time").value,
